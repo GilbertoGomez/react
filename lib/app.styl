@@ -1,7 +1,16 @@
 @import "nib"
-@import "./components/styles.styl"
+@import "./components/card.styl"
+@import "./components/modal.styl"
+@import "./components/search.styl"
 
 body
-		font-family Arial
 		font-size 16px
 		margin 0
+		
+.main
+	background url("../images/pattern.jpg") no-repeat center center fixed
+	background-size cover
+				
+input:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0px 1000px white inset;
+}

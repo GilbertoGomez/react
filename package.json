@@ -2,7 +2,7 @@
   "scripts": {
     "pug": "pug lib/index.pug   --out .",
     "css": "stylus --use nib --compress --watch lib/app.styl --out public/css",
-    "serve": "http-server ."
+    "server": "http-server ."
   },
   "dependencies": {
     "babel": "^6.5.2",

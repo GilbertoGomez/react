@@ -4,7 +4,7 @@ var path = require('path');
 
 module.exports = {
   context: path.join(__dirname, "lib"),
-  devtool: debug ? "inline-sourcemap" : null,
+  devtool: debug ? "eval-source-map" : null,
   entry: "./app.js",
   module: {
     loaders: [
@@ -23,14 +23,21 @@ module.exports = {
     path: __dirname + "/public/",
     filename: "app.min.js"
   },
-  plugins: debug ? [] : [
+  plugins: !debug ? [    
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.DefinePlugin({
       'process.env':{
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new webpack.optimize.UglifyJsPlugin( {compress:{ warnings: true} }),
-  ],
+    new webpack.optimize.UglifyJsPlugin( {
+      comments: false,
+      compress: {
+        warnings: false,
+        drop_console: true
+        },
+    })] : []
 };

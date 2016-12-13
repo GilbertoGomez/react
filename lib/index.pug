@@ -1,11 +1,23 @@
 doctype html
 html(lang="es")
-  head
-    meta(charset="UTF-8")
-    title React y api Marvel
-    link(rel="stylesheet", href="./public/css/app.css")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-  body
-    main
-      #app
-    script(src="public/app.min.js")
+	head
+		meta(charset="UTF-8")
+		title React y Api Marvel
+		link(href="https://fonts.googleapis.com/css?family=Kavoon" rel="stylesheet")
+		link(rel="stylesheet", href="./public/css/app.css")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+	body
+		main
+			#popup.modal-wrapper
+				.popup-contenedor
+					span.text Personaje No encontrado
+						i.icon-sad
+					a.popup-cerrar#close(href='#' onclick="cerrar()")
+						span.icon-cancel-circle
+			#app
+	script.
+		function cerrar() {
+			var cerrar = document.getElementById('popup');
+			cerrar.classList.remove('show');
+		}
+	script(src="public/app.min.js")

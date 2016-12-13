@@ -1,1 +1,4 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>React y api Marvel</title><link rel="stylesheet" href="./public/css/app.css"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body><main><div id="app"></div></main><script src="public/app.min.js"></script></body></html>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>React y Api Marvel</title><link href="https://fonts.googleapis.com/css?family=Kavoon" rel="stylesheet"><link rel="stylesheet" href="./public/css/app.css"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body><main><div class="modal-wrapper" id="popup"><div class="popup-contenedor"><span class="text">Personaje No encontrado<i class="icon-sad"></i></span><a class="popup-cerrar" id="close" href="#" onclick="cerrar()"><span class="icon-cancel-circle"></span></a></div></div><div id="app"></div></main></body><script>function cerrar() {
+	var cerrar = document.getElementById('popup');
+	cerrar.classList.remove('show');
+}</script><script src="public/app.min.js"></script></html>
